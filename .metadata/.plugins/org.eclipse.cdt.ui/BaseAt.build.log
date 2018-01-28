@@ -1,0 +1,14 @@
+23:16:50 **** Build of configuration Debug for project BaseAt ****
+make all 
+Building file: ../user/src/user_main.c
+Invoking: GNU ARM Cross C Compiler
+xtensa-lx106-elf-gcc -O0  -g3 -I/opt/Espressif/ESP8266_SDK/include -I/opt/Espressif/ESP8266_SDK/include/json -I"/home/sergey/Dev/ESP8266/Github/ESP8266/BaseAt" -I"/home/sergey/Dev/ESP8266/Github/ESP8266/BaseAt/system/inc" -I"/home/sergey/Dev/ESP8266/Github/ESP8266/BaseAt/user/inc" -std=gnu11 -Os -g -O2 -Wpointer-arith -Wundef -Werror -Wl,-EL -fno-inline-functions -nostdlib -mlongcalls -mtext-section-literals  -D__ets__ -DICACHE_FLASH -c -MMD -MP -MF"user/src/user_main.d" -MT"user/src/user_main.o" -c -o "user/src/user_main.o" "../user/src/user_main.c"
+../user/src/user_main.c: In function 'user_init':
+../user/src/user_main.c:11:3: error: implicit declaration of function 'wifi_get_opmode' [-Werror=implicit-function-declaration]
+   at_wifiMode = wifi_get_opmode();
+   ^
+cc1: all warnings being treated as errors
+make: *** [user/src/subdir.mk:20: user/src/user_main.o] Ошибка 1
+
+23:16:50 Build Finished (took 149ms)
+

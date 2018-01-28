@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1673831618/PATH/delimiter=\:
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1673831618/PATH/operation=replace
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1673831618/PATH/value=/opt/Espressif/crosstool-NG/builds/xtensa-lx106-elf/bin\:/opt/Espressif/ESP8266_SDK/bin\:/usr/local/sbin\:/usr/local/bin\:/usr/bin\:/usr/lib/jvm/default/bin\:/usr/bin/site_perl\:/usr/bin/vendor_perl\:/usr/bin/core_perl
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1673831618/append=true
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.1673831618/appendContributed=true
