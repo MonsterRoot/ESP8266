@@ -18,6 +18,7 @@
 #ifndef __AT_CMD_H
 #define __AT_CMD_H
 
+#include "c_types.h"
 #include "at.h"
 #include "at_wifiCmd.h"
 #include "at_ipCmd.h"

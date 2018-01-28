@@ -16,10 +16,14 @@
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "user_interface.h"
-#include "at.h"
+
 #include "at_wifiCmd.h"
+//#include <stdint.h>
+#include <c_types.h>
+#include "espmissingincludes.h"
 #include "osapi.h"
-#include "c_types.h"
+#include "at.h"
+//#include "c_types.h"
 #include "mem.h"
 
 at_mdStateType mdState = m_unlink;

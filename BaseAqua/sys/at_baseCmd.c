@@ -15,15 +15,17 @@
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <stdlib.h>
+//#include <stdlib.h>
+//#include <stdint.h>
+#include <c_types.h>
+#include "espmissingincludes.h"
 #include "osapi.h"
-#include "c_types.h"
 #include "at.h"
 #include "at_baseCmd.h"
 #include "user_interface.h"
 #include "at_version.h"
 #include "version.h"
-#include "driver/uart_register.h"
+#include "driver/uart.h"
 
 /** @defgroup AT_BASECMD_Functions
   * @{

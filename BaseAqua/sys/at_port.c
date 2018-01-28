@@ -15,9 +15,12 @@
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "at.h"
 #include "user_interface.h"
+//#include <stdint.h>
+#include <c_types.h>
+#include "espmissingincludes.h"
 #include "osapi.h"
+#include "at.h"
 #include "driver/uart.h"
 
 /** @defgroup AT_PORT_Defines

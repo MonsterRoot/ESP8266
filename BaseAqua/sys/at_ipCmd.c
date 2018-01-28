@@ -22,9 +22,11 @@
 #include "mem.h"
 #include "at.h"
 #include "at_ipCmd.h"
+//#include <stdint.h>
+
 #include "osapi.h"
 #include "driver/uart.h"
-#include<stdlib.h>
+//#include <stdlib.h>
 
 extern at_mdStateType mdState;
 extern BOOL specialAtState;
@@ -49,7 +51,7 @@ static BOOL disAllFlag = FALSE;
 static at_linkConType pLink[at_linkMax];
 static uint8_t sendingID;
 static BOOL serverEn = FALSE;
-static at_linkNum = 0;
+static int at_linkNum = 0;
 
 //static uint8_t repeat_time = 0;
 static uint16_t server_timeover = 180;

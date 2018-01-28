@@ -15,10 +15,14 @@
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
+#include "user_interface.h"
+//#include <stdint.h>
+#include <c_types.h>
+#include "espmissingincludes.h"
+#include "osapi.h"
 #include "ets_sys.h"
 #include "driver/uart.h"
-#include "user_interface.h"
-#include "osapi.h"
 #include "at.h"
 #include "user_config.h"
 

@@ -18,7 +18,7 @@
 #ifndef __AT_H
 #define __AT_H
 
-#include "c_types.h"
+//#include "c_types.h"
 
 //#define at_busyTaskPrio        1
 //#define at_busyTaskQueueLen    4

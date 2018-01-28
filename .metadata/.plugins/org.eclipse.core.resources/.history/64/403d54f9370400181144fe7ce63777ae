@@ -1,0 +1,92 @@
+/*
+ * File	: user_main.c
+ * This file is part of Espressif's AT+ command set program.
+ * Copyright (C) 2013 - 2016, Espressif Systems
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of version 3 of the GNU General Public License as
+ * published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+#include "ets_sys.h"
+#include "driver/uart.h"
+#include "user_interface.h"
+#include <stdint.h>
+#include <c_types.h>
+#include "espmissingincludes.h"
+#include "osapi.h"
+#include "at.h"
+#include "user_config.h"
+
+#define user_procTaskPrio        2
+#define user_procTaskQueueLen    1
+os_event_t    user_procTaskQueue[user_procTaskQueueLen];
+static void ICACHE_FLASH_ATTR user_procTask(os_event_t *events);
+
+extern uint8_t at_wifiMode;
+extern void user_esp_platform_load_param(void *param, uint16 len);
+void ICACHE_FLASH_ATTR
+user_set_softap_config(void)
+{
+	struct softap_config config;
+	wifi_softap_get_config(&config); // Get config first.
+	os_memset(config.ssid, 0, 32);
+	os_memset(config.password, 0, 64);
+	os_memcpy(config.ssid, SSID, 7);
+	os_memcpy(config.password, SSID_PASSWORD, 8);
+	config.authmode = AUTH_WPA_WPA2_PSK;
+	config.ssid_len = 0;// or its actual length
+	config.max_connection = 2; // how many stations can connect to ESP8266 softAP at most.
+	wifi_softap_set_config(&config);// Set ESP8266 softap config .
+}
+
+//Do nothing function
+static void ICACHE_FLASH_ATTR
+user_procTask(os_event_t *events)
+{
+        //Set GPIO2 to HIGH
+//	if (GPIO_REG_READ(GPIO_OUT_ADDRESS) & BIT12)
+//        gpio_output_set(0, BIT12, BIT12, 0);
+//	else
+        gpio_output_set(BIT12, 0, BIT12, 0);
+    os_delay_us(1000);
+//    system_os_post(user_procTaskPrio, 0, 0 );
+}
+
+
+void user_init(void)
+{
+  uint8_t userbin;
+  uint32_t upFlag;
+  at_uartType tempUart;
+  // Initialize the GPIO subsystem.
+   gpio_init();
+   //Set GPIO2 to output mode
+    PIN_FUNC_SELECT(PERIPHS_IO_MUX_MTDI_U, FUNC_GPIO12);
+    gpio_output_set( 0,BIT12, BIT12, 0);
+    gpio_output_set(BIT12, 0, BIT12, 0);
+  user_esp_platform_load_param((uint32 *)&tempUart, sizeof(at_uartType));
+  if(tempUart.saved == 1)
+  {
+    uart_init(tempUart.baud, BIT_RATE_115200);
+  }
+  else
+  {
+    uart_init(BIT_RATE_115200, BIT_RATE_115200);
+  }
+  at_wifiMode = wifi_get_opmode();
+  os_printf("\r\nready!!!\r\n");
+  uart0_sendStr("\r\nready\r\n");
+  user_set_softap_config();
+  //Start os task
+  system_os_task(user_procTask, user_procTaskPrio,user_procTaskQueue, user_procTaskQueueLen);
+  system_os_post(user_procTaskPrio,0,0);
+//  at_init();
+}
