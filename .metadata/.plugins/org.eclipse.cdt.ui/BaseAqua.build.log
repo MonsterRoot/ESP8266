@@ -1,0 +1,52 @@
+23:56:49 **** Incremental Build of configuration Debug for project BaseAqua ****
+make all 
+Building file: ../sys/at_baseCmd.c
+Invoking: Cross GCC Compiler
+xtensa-lx106-elf-gcc -std=c11 -I/opt/Espressif/ESP8266_SDK/include -I"/home/sergey/Dev/ESP8266/Github/ESP8266/BaseAqua/sys/inc" -I"/home/sergey/Dev/ESP8266/Github/ESP8266/BaseAqua/inc" -I/opt/Espressif/ESP8266_SDK/include/json -Os -g -O2 -Wall -Wpointer-arith -Wundef -Werror -Wl,-EL -fno-inline-functions -nostdlib -mlongcalls -mtext-section-literals  -D__ets__ -DICACHE_FLASH -c -fmessage-length=0 -v -MMD -MP -MF"sys/at_baseCmd.d" -MT"sys/at_baseCmd.o" -o "sys/at_baseCmd.o" "../sys/at_baseCmd.c"
+Using built-in specs.
+COLLECT_GCC=xtensa-lx106-elf-gcc
+Target: xtensa-lx106-elf
+Configured with: /opt/Espressif/crosstool-NG/.build/src/gcc-4.8.5/configure --build=x86_64-build_pc-linux-gnu --host=x86_64-build_pc-linux-gnu --target=xtensa-lx106-elf --prefix=/opt/Espressif/crosstool-NG/builds/xtensa-lx106-elf --with-local-prefix=/opt/Espressif/crosstool-NG/builds/xtensa-lx106-elf/xtensa-lx106-elf/sysroot --with-sysroot=/opt/Espressif/crosstool-NG/builds/xtensa-lx106-elf/xtensa-lx106-elf/sysroot --with-newlib --enable-threads=no --disable-shared --with-pkgversion='crosstool-NG crosstool-ng-1.23.0' --disable-__cxa_atexit --enable-cxx-flags='-fno-exceptions -fno-rtti' --with-gmp=/opt/Espressif/crosstool-NG/.build/xtensa-lx106-elf/buildtools --with-mpfr=/opt/Espressif/crosstool-NG/.build/xtensa-lx106-elf/buildtools --with-mpc=/opt/Espressif/crosstool-NG/.build/xtensa-lx106-elf/buildtools --with-isl=/opt/Espressif/crosstool-NG/.build/xtensa-lx106-elf/buildtools --with-cloog=/opt/Espressif/crosstool-NG/.build/xtensa-lx106-elf/buildtools --with-libelf=/opt/Espressif/crosstool-NG/.build/xtensa-lx106-elf/buildtools --enable-lto --enable-target-optspace --without-long-double-128 --disable-libgomp --disable-libmudflap --disable-libssp --disable-libquadmath --disable-libquadmath-support --disable-nls --disable-multilib --enable-languages=c,c++
+Thread model: single
+gcc version 4.8.5 (crosstool-NG crosstool-ng-1.23.0) 
+COLLECT_GCC_OPTIONS='-std=c11' '-I' '/opt/Espressif/ESP8266_SDK/include' '-I' '/home/sergey/Dev/ESP8266/Github/ESP8266/BaseAqua/sys/inc' '-I' '/home/sergey/Dev/ESP8266/Github/ESP8266/BaseAqua/inc' '-I' '/opt/Espressif/ESP8266_SDK/include/json' '-Os' '-g' '-O2' '-Wall' '-Wpointer-arith' '-Wundef' '-Werror' '-fno-inline-functions' '-nostdlib' '-mlongcalls' '-mtext-section-literals' '-D' '__ets__' '-D' 'ICACHE_FLASH' '-c' '-fmessage-length=0' '-v' '-MMD' '-MP' '-MF' 'sys/at_baseCmd.d' '-MT' 'sys/at_baseCmd.o' '-o' 'sys/at_baseCmd.o'
+ /opt/Espressif/crosstool-NG/builds/xtensa-lx106-elf/libexec/gcc/xtensa-lx106-elf/4.8.5/cc1 -quiet -v -I /opt/Espressif/ESP8266_SDK/include -I /home/sergey/Dev/ESP8266/Github/ESP8266/BaseAqua/sys/inc -I /home/sergey/Dev/ESP8266/Github/ESP8266/BaseAqua/inc -I /opt/Espressif/ESP8266_SDK/include/json -MMD sys/at_baseCmd.d -MF sys/at_baseCmd.d -MP -MT sys/at_baseCmd.o -D __ets__ -D ICACHE_FLASH ../sys/at_baseCmd.c -quiet -dumpbase at_baseCmd.c -mlongcalls -mtext-section-literals -auxbase-strip sys/at_baseCmd.o -g -Os -O2 -Wall -Wpointer-arith -Wundef -Werror -std=c11 -version -fno-inline-functions -fmessage-length=0 -o /tmp/ccTEiZFd.s
+GNU C (crosstool-NG crosstool-ng-1.23.0) version 4.8.5 (xtensa-lx106-elf)
+	compiled by GNU C version 7.2.1 20171128, GMP version 6.0.0, MPFR version 3.1.3, MPC version 1.0.3
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+ignoring nonexistent directory "/opt/Espressif/crosstool-NG/builds/xtensa-lx106-elf/xtensa-lx106-elf/sysroot/opt/Espressif/crosstool-NG/builds/xtensa-lx106-elf/xtensa-lx106-elf/sysroot/include"
+#include "..." search starts here:
+#include <...> search starts here:
+ /opt/Espressif/ESP8266_SDK/include
+ /home/sergey/Dev/ESP8266/Github/ESP8266/BaseAqua/sys/inc
+ /home/sergey/Dev/ESP8266/Github/ESP8266/BaseAqua/inc
+ /opt/Espressif/ESP8266_SDK/include/json
+ /opt/Espressif/crosstool-NG/builds/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/4.8.5/include
+ /opt/Espressif/crosstool-NG/builds/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/4.8.5/include-fixed
+ /opt/Espressif/crosstool-NG/builds/xtensa-lx106-elf/lib/gcc/xtensa-lx106-elf/4.8.5/../../../../xtensa-lx106-elf/include
+ /opt/Espressif/crosstool-NG/builds/xtensa-lx106-elf/xtensa-lx106-elf/sysroot/usr/include
+End of search list.
+GNU C (crosstool-NG crosstool-ng-1.23.0) version 4.8.5 (xtensa-lx106-elf)
+	compiled by GNU C version 7.2.1 20171128, GMP version 6.0.0, MPFR version 3.1.3, MPC version 1.0.3
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: 16320f3def6f3a19dcf006d80b37afb3
+../sys/at_baseCmd.c: In function 'at_exeCmdNull':
+../sys/at_baseCmd.c:48:3: error: implicit declaration of function 'uart0_sendStr' [-Werror=implicit-function-declaration]
+   at_backOk;
+   ^
+../sys/at_baseCmd.c: In function 'at_exeCmdGmr':
+../sys/at_baseCmd.c:99:3: error: implicit declaration of function 'ets_sprintf' [-Werror=implicit-function-declaration]
+   os_sprintf(temp, AT_VERSION);
+   ^
+../sys/at_baseCmd.c: In function 'at_setupCmdIpr':
+../sys/at_baseCmd.c:250:3: error: implicit declaration of function 'ets_delay_us' [-Werror=implicit-function-declaration]
+   os_delay_us(10000);
+   ^
+../sys/at_baseCmd.c:251:3: error: implicit declaration of function 'uart_div_modify' [-Werror=implicit-function-declaration]
+   uart_div_modify(0, UART_CLK_FREQ / tempUart.baud);
+   ^
+cc1: all warnings being treated as errors
+make: *** [sys/subdir.mk:35: sys/at_baseCmd.o] Ошибка 1
+
+23:56:49 Build Finished (took 128ms)
+
